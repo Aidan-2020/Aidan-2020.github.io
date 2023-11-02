@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Projects</title>
+	<style>
+		body {
+			background-color: #B0903D; /* gold */
+			color: #0A0A0A; /* black */
+			font-family: 'Montserrat', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #0A0A0A; /* black */
+			color: #B0903D; /* gold */
+			padding: 1em;
+			text-align: center;
+		}
+		main {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 2em;
+		}
+		h1 {
+			font-size: 3em;
+			margin-bottom: 0.5em;
+			color: #B0903D; /* gold */
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.2em;
+			border-bottom: 2px solid #0A0A0A; /* black */
+			padding-bottom: 0.5em;
+			margin-top: 0;
+		}
+		h2 {
+			font-size: 2em;
+			margin-bottom: 0.5em;
+			color: #0A0A0A; /* black */
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.2em;
+			margin-top: 0;
+		}
+		p {
+			margin-top: 0;
+			text-align: justify;
+			line-height: 1.5em;
+			margin-bottom: 1em;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		li {
+			margin: 1em;
+			padding: 1em;
+			background-color: #C7C7C9; /* silver */
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px #0A0A0A; /* black */
+			flex: 1 0 200px;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			transition: transform 0.3s ease-in-out;
+			transform-style: preserve-3d;
+			transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+		}
+		li:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 100%);
+			pointer-events: none;
+			transform-origin: top;
+			transform: translateY(-100%) scaleY(0.5);
+			transition: transform 0.3s ease-in-out;
+		}
+		li:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 100%);
+			pointer-events: none;
+			transform-origin: left;
+			transform: translateX(-100%) scaleX(0.5);
+			transition: transform 0.3s ease-in-out;
+		}
+		li:hover {
+			transform: perspective(1000px) rotateY(15deg) rotateX(-15deg) scale(1.05);
+		}
+		li:hover:before {
+			transform: translateY(0) scaleY(1);
+		}
+		li:hover:after {
+			transform: translateX(0) scaleX(1);
+		}
+		a {
+			color: #0A0A0A; /* black */
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: #EE6C4D; /* orange */
+			text-decoration: underline;
+		}
+		b {
+			color: #B0903D; /* gold */
+			text-decoration: none;
+			font-weight: bold;
+		}
+		b:hover {
+			color: #EE6C4D; /* orange */
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1><b href="#">
+    Aidan Brown
+  </b></h1>
+	</header>
+	<main>
+		<h2>Game Development</h2>
+		<ul>
+			<li>
+				<h3>Durian Heist</h3>
+				<p>Image, description, importantce, link to what? video? your own durian heist page? Allen's page? if your own page, installer? or try to set up in browser? test game?</p>
+				<p><a href="#">View project</a></p>
+			</li>
+			<li>
+				<h3>Rigged Referee</h3>
+				<p>Give a brief decription, what you learned, maybe what a game jam is, and image, then link to evan's itch.io page</p>
+				<p><a href="#">View project</a></p>
+			</li>
+			<li>
+				<h3>Joust</h3>
+				<p>image, short description and hook? link to a gl page for Joust like how Micahel has for his games</p>
+				<p><a href="#">View project</a></p>
+			</li>
+						<li>
+				<h3>Satyr</h3>
+				<p>Give a brief decription, what you learned, maybe why and what?, and image, then link to evan's itch.io page</p>
+				<p><a href="#">View project</a></p>
+			</li>
+		</ul>
+		<h2>Other programming</h2>
+		<ul>
+			<li>
+				<h3>C++ Wordle?</h3>
+				<p>see if you can check your grades for 100% on any 201, 202, or 341 projs</p>
+				<p><a href="#">View project</a></p>
+			</li>
+			<li>
+				<h3>201 proj?</h3>
+				<p>link to python porjects? so just your 201 projects? maybe supplement with youtube projects, udemy course stuff?</p>
+				<p><a href="#">View project</a></p>
+			</li>
+			<li>
+				<h3>202 or 341 proj?</h3>
+				<p>link to C++ projects? just any 202 and 341 projects? youtube C++ projects? Sololearn C++ projects?</p>
+				<p><a href="#">View project</a></p>
+			</li>
+			<li>
+				<h3>working on some more</h3>
+				<p>let them know your working on more? maybe something from solo learn? Extensive prompt engineering experience</p>
+				<p><a href="#">View project</a></p>
+			</li>
+		</ul>
+	</main>
+</body>
+</html>
