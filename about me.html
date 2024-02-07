@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>My Projects</title>
+	<style>
+		body {
+			background-color: #B0903D; /* gold */
+			color: #0A0A0A; /* black */
+			font-family: 'Montserrat', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #0A0A0A; /* black */
+			color: #B0903D; /* gold */
+			padding: 1em;
+			text-align: center;
+		}
+		main {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 2em;		}
+		h1 {
+			font-size: 3em;
+			margin-bottom: 0.5em;
+			color: #B0903D; /* gold */
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.2em;
+			border-bottom: 2px solid #0A0A0A; /* black */
+			padding-bottom: 0.5em;
+			margin-top: 0;
+		}
+		h2 {
+			font-size: 2em;
+			margin-bottom: 0.5em;
+			color: #0A0A0A; /* black */
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bold;
+			letter-spacing: 0.2em;
+			margin-top: 0;
+		}
+		p {
+			margin-top: 0;
+			text-align: justify;
+			line-height: 1.5em;
+			margin-bottom: 1em;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		li {
+			margin: 1em;
+			padding: 1em;
+			background-color: #C7C7C9; /* silver */
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px #0A0A0A; /* black */
+			flex: 1 0 200px;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+			transition: transform 0.3s ease-in-out;
+			transform-style: preserve-3d;
+			transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1);
+		}
+		li:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 100%);
+			pointer-events: none;
+			transform-origin: top;
+			transform: translateY(-100%) scaleY(0.5);
+			transition: transform 0.3s ease-in-out;
+		}
+		li:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 100%);
+			pointer-events: none;
+			transform-origin: left;
+			transform: translateX(-100%) scaleX(0.5);
+			transition: transform 0.3s ease-in-out;
+		}
+		li:hover {
+			transform: perspective(1000px) rotateY(15deg) rotateX(-15deg) scale(1.05);
+		}
+		li:hover:before {
+			transform: translateY(0) scaleY(1);
+		}
+		li:hover:after {
+			transform: translateX(0) scaleX(1);
+		}
+		a {
+			color: #B0903D; /* gold */
+			text-decoration: none;
+			font-weight: bold;
+		}
+		a:hover {
+			color: #EE6C4D; /* orange */
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1><a href="#">
+    About Me
+  </a></h1>
+	</header>
+	<main>
+		<h2>Who I am</h2>
+		<ul>
+			<li>
+				<h3>UMBC student</h3>
+				<p>I am a CS major at UMBC, currently a junior. I live on campus as well and spend a lot of time in the library working. I am planning on graduating in 4 years and then going into the workforce. My time at UMBC has been good so far, or at least not bad.</p>
+				<p><a href="#"></a></p>
+			</li>
+			<li>
+				<h3>Game Developer and intern</h3>
+				<p>I enjoy making video games, I have been since highschool. Just for fun or for class projects. I am also part of the UMBC game dev club. My current internship with the UMBC ESRA is not related to video games at all but is cool.</p>
+				<p><a href="#"></a></p>
+			</li>
+			<li>
+				<h3>Grew up in Maryland</h3>
+				<p>I grew up in Towson, Maryland with my family. I have a younger brother. I know some good restaurants in Towson and Timonium, and have some decent fishing spots as well. Went to school in Baltimore County, worked all my jobs and previous internships in the Timonium or Baltimore area.</p>
+				<p><a href="#"></a></p>
+			</li>
+						<li>
+				<h3>Who i aspire to be</h3>
+				<p>I want to do something cool and fun in tech. I want to go into video games, but AI/ML and robotics also seem cool to me, or really just any tech project that is for the betterment of the Earth and humans rather than for profit. Googles X company is a good example of those kinds of projects.</p>
+				<p><a href="#"></a></p>
+			</li>
+		</ul>
+		<h2>My interests</h2>
+		<ul>
+			<li>
+				<h3>Games</h3>
+				<p>I play video games, both single player and multiplayer games with friends. I also play Magic The Gathering, a trading card game, with my friends in person. Some recent favorites have been Sekiro, Hollow Knight, Hunt Showdown, The Finals, and Minecraft.</p>
+				<p><a href="#"></a></p>
+			</li>
+			<li>
+				<h3>Sports and Outdoors</h3>
+				<p>I do jiu jitsu on and off, and want to get into Karate, MMA, or boxing one day, but just as like a weekend warrior type deal. I play basketball when I can. I am really into fishing though, normal, fly fishing, beach, boat, whatever and wherever, I have even tried hand lining. I also like hiking and walking outside.</p>
+				<p><a href="#"></a></p>
+			</li>
+			<li>
+				<h3>Books</h3>
+				<p>I enjoy reading, my mom got me into reading as a kid. Read a few fiction series growing up, Percy Jackson included. Nowadays I do both fiction and nonfiction, mostly nonfiction. I would say my two most memorable books so far are Every Falling Star by Sungju Lee and The Choice by Edith Eger. Those are both nonfiction, which is my favorite kinda book, but the two most recent fiction books I remember reading were Maul Lockdown (Joe Schreiber) and Cloud Atlas by David Mitchell. Maybe sometime I will add my reading list here because there is a lot on it.</p>
+				<p><a href="#"></a></p>
+			</li>
+			<li>
+				<h3>Hanging out with friends</h3>
+				<p>I enjoy hanging out with my friends, walking/hiking/fishing and other random stuff, playing cards/basketball/videogames, we make videogames together sometimes, we go places like parks and museums. I have a couple friends in a band so I like going to their shows in Baltimore and Towson. Small parties and hangouts, just the usual.
+</p>
+				<p><a href="#"></a></p>
+			</li>
+		</ul>
+	</main>
+</body>
+</html>
