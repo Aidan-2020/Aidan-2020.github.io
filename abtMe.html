@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aidan Brown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .nav-button {
+            width: 25%;
+            padding: 15px 25px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: purple;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(90deg, #FF00FF, #8A2BE2, #4B0082, #0000FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .section {
+            width: 80%;
+            margin-bottom: 100px;
+        }
+
+        .subsection {
+            margin-bottom: 20px;
+        }
+
+        .transition-wrapper {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .element1 {
+            transition: 1s;
+            font-size: 2vw;
+            line-height: 1;
+            transform: translateY(18px);
+        }
+
+        .transition-wrapper:hover .element1 {
+            transform: none;
+        }
+
+        .content {
+            font-size: 1.2vw;
+            color: #333;
+            text-align: center;
+        }
+
+        .load-transition {
+            transform: translateY(18px);
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
+        <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
+        <button class="nav-button">More About Me</button>
+    </nav>
+
+    <div class="section">
+        <h1 class="gradient-text load-transition">Who I Am</h1>
+        
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text load-transition">UMBC Student</div>
+            </div>
+            <p class="content">Computer science student in my senior year at the University of Maryland, Baltimore County. I live off campus and spend a lot of time in the library working. I am not planning on going to grad school. I have enjoyed my time at UMBC and learned a lot about computer science and game development.</p>
+        </div>
+
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text load-transition">Game Developer and Intern</div>
+            </div>
+            <p class="content">Passionate about game development and design, with experience in creating games and working in teams. I have been making games since highschool. Just for fun or for class projects. I am also part of the UMBC game dev club. My current internship with the UMBC ESRA is not related to video games at all but is cool.</p>
+        </div>
+
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text load-transition">Maryland Native</div>
+            </div>
+            <p class="content">I grew up in Towson, Maryland with my family. I have a younger brother. I know some good restaurants in Towson and Timonium, and have some decent fishing spots as well. Went to school in Baltimore County, worked all my jobs and previous internships in the Timonium or Baltimore area.</p>
+        </div>
+
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text load-transition">Aspiring Professional</div>
+            </div>
+            <p class="content">I am aiming to become a skilled professional in either game development, AI/ML, or robotics. Or all three. I want to do something cool and fun in tech.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h1 class="gradient-text">My Interests</h1>
+        
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text">Games</div>
+            </div>
+            <p class="content">Passionate about playing and creating video games, exploring various genres and game design principles. I enjoy both single player and multiplayer games with friends. I also play Magic The Gathering, a trading card game, with my friends in person. Some recent favorites have been Sekiro, Hollow Knight, Hunt Showdown, The Finals, and Minecraft.</p>
+        </div>
+
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text">Sports and Outdoors</div>
+            </div>
+            <p class="content">I like staying active and connected with nature. I do jiu jitsu on and off, and want to get into Karate, MMA, or boxing one day, but just as like a weekend warrior type deal. I play basketball when I can. I am really into fishing though, normal, fly fishing, beach, boat, whatever and wherever, I have even tried hand lining. I also like hiking and walking outside.</p>
+        </div>
+
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text">Books</div>
+            </div>
+            <p class="content">I enjoy reading, my mom got me into reading as a kid. Read a few fiction series growing up, Percy Jackson included. Nowadays I do both fiction and nonfiction, mostly nonfiction. I would say my two most memorable books so far are Every Falling Star by Sungju Lee and The Choice by Edith Eger. Those are both nonfiction, which is my favorite kinda book, but the two most recent fiction books I remember reading were Maul Lockdown (Joe Schreiber) and Cloud Atlas by David Mitchell. Maybe sometime I will add my reading list here because there is a lot on it.</p>
+        </div>
+
+        <div class="subsection">
+            <div class="transition-wrapper">
+                <div class="element1 gradient-text">Hanging Out with Friends</div>
+            </div>
+            <p class="content">I enjoy hanging out with my friends, walking/hiking/fishing and other random stuff, playing cards/basketball/videogames, we make videogames together sometimes, we go places like parks and museums. I have a couple friends in a band so I like going to their shows in Baltimore and Towson. Small parties and hangouts, just the usual.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadTransitionElements = document.querySelectorAll('.load-transition');
+            loadTransitionElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.style.transform = 'none';
+                } else {
+                    el.style.transform = 'translateY(18px)';
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.element1:not(.load-transition)');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    el.style.transform = 'none';
+                } else {
+                    el.style.transform = 'translateY(18px)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

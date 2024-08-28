@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aidan Brown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .nav-button {
+            width: 25%;
+            padding: 15px 25px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: purple;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 10vh;
+        }
+
+        h1, .subtitle, .section-title {
+            background-image: linear-gradient(90deg, rgba(194, 57, 248, 1), rgba(48, 53, 97, 1));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 6vw;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 2vw;
+            font-weight: bold;
+        }
+
+        .section {
+            width: 80%;
+            margin-top: 50px;
+        }
+
+        .section-title {
+            font-size: 3vw;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            font-size: 1.2vw;
+            color: #333;
+            text-align: center;  /* Changed from justify to center */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button">Home</button>
+        <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='abtMe.html'">More About Me</button>
+    </nav>
+    <div class="content">
+        <h1>Aidan Brown</h1>
+        <p class="subtitle">Programmer | Game Designer/Developer | Student</p>
+        
+        <div class="section">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-content">
+                I am a computer science student at the University of Maryland, Baltimore County, with an expected graduation date of May 2025. I am passionate about game development and design, programming, AI/ML, as well as robotics. I have experience making games and working in teams.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Contact Me</h2>
+            <p class="section-content">
+                You can reach me at <a href="mailto:brown.aidan01@gmail.com">brown.aidan01@gmail.com</a><br>
+                LinkedIn: <a href="www.linkedin.com/in/aidan-brown-3857aa299">www.linkedin.com/in/aidan-brown-3857aa299</a><br>
+                GitHub: <a href="https://github.com/Aidan-2020">https://github.com/Aidan-2020</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

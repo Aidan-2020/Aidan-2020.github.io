@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Development Portfolio - Aidan Brown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .nav-button {
+            width: 25%;
+            padding: 15px 25px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: purple;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(90deg, #FF00FF, #8A2BE2, #4B0082, #0000FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            margin: 40px 0;
+        }
+
+        .project {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 100px;
+        }
+
+        .project-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .project-info {
+            width: 45%;
+        }
+
+        .project-title {
+            font-size: 2.5vw;
+            margin-bottom: 20px;
+        }
+
+        .project-description {
+            font-size: 1.2vw;
+            color: #333;
+        }
+
+        .project-image {
+            width: 45%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .minor-projects {
+            display: flex;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        .minor-project {
+            position: relative;
+            width: 33.33%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .minor-project img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 1s;
+        }
+
+        .minor-project-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-size: 1.2vw;
+            text-align: center;
+            width: 80%;
+            transition: 1s;
+            letter-spacing: normal;
+        }
+
+        .minor-project:hover .minor-project-title {
+            letter-spacing: 0.5em;
+        }
+
+        .minor-project:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
+        <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
+        <button class="nav-button">Game Development Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='abtMe.html'">More About Me</button>
+    </nav>
+
+    <h1 class="gradient-text">Game Development Portfolio</h1>
+
+    <div class="project">
+        <div class="project-info">
+            <h2 class="project-title gradient-text">Durian Heist</h2>
+            <p class="project-description">
+              Durian Heist is a two player LAN based game that test’s players' problem solving, patience, and teamwork. I learned about programming as well as teamwork and communication on this project. I learned what a good workflow looks like, and what it takes to actually get a project done. 
+              <p><a href="https://magmaw.itch.io/durianheist">View project (password is "durianheist")</a></p>
+              <p><a href="https://www.cylumn.com/projects/durian-heist">More about the game</a></p>
+              <p><a href="https://youtu.be/0AbfHWTDL54?si=F0Zn0_djDxOLK-6Y">Gameplay Video</a></p>
+            </p>
+        </div>
+        <img src="DH.png" alt="Game Project 1" class="project-image">
+    </div>
+
+    <div class="project project-reverse">
+        <div class="project-info">
+            <h2 class="project-title gradient-text">Rigged Referee</h2>
+            <p class="project-description">
+              A single player game where you play as a referee trying to fix boxing matches but also trying not to get caught! I learned game design and programming. This was made for a game jam, a competition where teams have 48 hours to make a game. I got experience working, learning, and managing on the fly and under pressure.
+              <p><a href="https://evanmcrae.itch.io/rigged-referee">View project</a></p>
+            </p>
+        </div>
+        <img src="RR.png" alt="Game Project 2" class="project-image">
+    </div>
+
+    <div class="project">
+        <div class="project-info">
+            <h2 class="project-title gradient-text">Satyr</h2>
+            <p class="project-description">
+                Satyr is a 2d metroidvania, made in Unity, I was a programmer and designer on the team. I learned about programming and game design. A group of other college students I met at the UMBC game dev club and I made this for fun, inspired heavily by the game Hollow Knight.
+                <p><a href="https://ladyakemi.itch.io/satyr">View project</a></p>
+            </p>
+        </div>
+        <img src="S.png" alt="Satyr" class="project-image">
+    </div>
+
+    <div class="project project-reverse">
+        <div class="project-info">
+            <h2 class="project-title gradient-text">Joust</h2>
+            <p class="project-description">
+                A remake of the 80s arcade game Joust made in Unity in a week. Got reps in programming, communicating, and presenting. Built programming and teamwork skills.
+              <p><a href="Joust setup.exe">Download the Joust installer</a></p>
+            </p>
+        </div>
+        <img src="J.png" alt="Joust" class="project-image">
+    </div>
+
+    <!-- Add more project divs as needed, alternating between "project" and "project project-reverse" classes -->
+
+    <div class="minor-projects">
+        <a href="https://evanmcrae.itch.io/this-is-no-laughing-matter" class="minor-project">
+            <img src="NLM.png" alt="Game 3">
+            <div class="minor-project-title">This Is No Laughing Matter</div>
+        </a>
+        <a href="https://evanmcrae.itch.io/dear-ants-i-hate-you" class="minor-project">
+            <img src="ant.png" alt="Game 4">
+            <div class="minor-project-title">Dear Ants I HATE YOU</div>
+        </a>
+        <a href="https://github.com/Jet-UMBC/cmsc447-sp2024-Ragdoll" class="minor-project">
+            <img src="box.png" alt="Game 5">
+            <div class="minor-project-title">B.O.X.E.S.</div>
+        </a>
+    </div>
+
+    <script>
+        // Add any JavaScript if needed
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Portfolio - Aidan Brown</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .nav-button {
+            width: 25%;
+            padding: 15px 25px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: purple;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(90deg, #FF00FF, #8A2BE2, #4B0082, #0000FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4vw;
+            font-weight: bold;
+            margin: 40px 0;
+        }
+
+        .portfolio-container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 2vw;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 1.2vw;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9vw;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-links {
+            display: flex;
+        }
+
+        .project-link {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1vw;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
+        <button class="nav-button">Programming Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='abtMe.html'">More About Me</button>
+    </nav>
+
+    <h1 class="gradient-text">Programming Portfolio</h1>
+
+    <div class="portfolio-container">
+        <div class="project-card">
+            <h2 class="project-title gradient-text">Outside of School Projects</h2>
+            <p class="project-description">
+                I am currently working on an app with a friend that is a gene sequence difference counter. Really it just counts the differences between two strings of equal length. We are implementing computer vision, so you can just point your camera to two gene sequences and it will automatically identify them and count the differences. There are other projects on the way as well.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">OpenCV</span>
+            </div>
+            <div class="project-links">
+                <!--<a href="#" class="project-link">View Project</a>-->
+                <a href="https://github.com/Aidan-2020/Bio-Project" class="project-link">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">University Classes and Skills</h2>
+            <p class="project-description">
+                Through my time at UMBC I learned Python, C/C++, C#, and Ruby. I learned a lot about teamwork and version control. I used GitHub and Jira. I made video games, python and Java apps, webpages, a kernel, learned assembly, learned about algorithms and data structures, linear algebra and GUI. Typical comp sci major things, outside of school projects are on the way. I am currently taking classes in AI/ML, graphics for games, NLP and generative AI
+                <br>
+                <br>Relevant programming languages and classes:
+                <br>Python
+                <br>C/C++
+                <br>C#
+                <br>Introduction to Artificial Intelligence
+                <br>Introduction to Machine Learning
+                <br>Graphics for Games
+                <br>Natural Language Processing
+                <br>Fictional Text Generation with Generative AI
+                <br>Software Engineering
+                <br>Principles of Operating Systems
+                <br>Design and Analysis of Algorithms.
+                <br>Graphical User Interface Programming
+                <br>Data Structures
+                <br>Linear Algebra
+            </p>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Teamwork</span>
+                <span class="tag">Version Control</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">Data Structures</span>
+                <span class="tag">Linear Algebra</span>
+                <span class="tag">GUI</span>
+            </div>
+           <!-- <div class="project-links">
+                <a href="#" class="project-link">View Project</a>
+                <a href="#" class="project-link">GitHub Repo</a>
+            </div> -->
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">High School</h2>
+            <p class="project-description">
+                I started learning programming in highschool, there was an IT/IMP (interactive media production) program. I learned Python, C++, Java, HTML CSS JavaScript, and C# there first. I made a bunch of games in the Unity game engine that are now mostly lost to me. It is where I first learned about version control, web development and algorithms and data structures basics.
+
+            </p>
+            <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Unity</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">C++</span>
+                <span class="tag">Java</span>
+                <span class="tag">C#</span>
+            </div>
+             <!--<div class="project-links">
+                <a href="#" class="project-link">View Project</a>
+                <a href="#" class="project-link">GitHub Repo</a>
+            </div>-->
+        </div>
+
+    </div>
+
+    <script>
+        // Add any JavaScript if needed
+    </script>
+</body>
+</html>
