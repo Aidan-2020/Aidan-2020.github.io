@@ -75,7 +75,48 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            display: block;
+            width: fit-content;
+            margin: auto;
         }
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 10vh;
+        }
+
+        .nav-button {
+            width: 24.7%;
+            padding: 15px 25px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: purple;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+         }
+
+        .video {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 24px;
+            background: black;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            width: fit-content;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -88,17 +129,17 @@
     <main id="projects">
         <section class="game-section" data-bg="#1f6f43">
             <div class="video-bg">
-                <div id="player-0" data-videoid="yX5qwsXCWRs"></div>
+                <div id="player-0" data-videoid="yX5qwsXCWRs" class="video"></div>
             </div>
             <div class="content">
                 <h1>Phantom Feline</h1>
                 <p>Stealth puzzle game about a ghost cat vs asshole roombas.</p>
-                <a href="https://store.steampowered.com/app/3835880/Phantom_Feline/">Steam</a>
+                <a href="https://store.steampowered.com/app/3835880/Phantom_Feline/" >Steam</a>
             </div>
         </section>
         <section class="game-section" data-bg="#5b1d1d">
             <div class="video-bg">
-                <div id="player-1" data-videoid="0AbfHWTDL54"></div>
+                <div id="player-1" data-videoid="0AbfHWTDL54" class="video"></div>
             </div>
             <div class="content">
                 <h1>Durian Heist</h1>
