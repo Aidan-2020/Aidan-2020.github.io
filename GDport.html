@@ -31,14 +31,14 @@
             overflow: hidden;
         }
 
-        .video-bg {
+        /*.video-bg {
             position: absolute;
             width: 100%;
             height: 100%;
             pointer-events: none;
             overflow: hidden;
         }
-            /* The div that YouTube replaces with an iframe */
+            comment: The div that YouTube replaces with an iframe 
             .video-bg > div {
                 position: absolute;
                 width: 177.78vh !important;
@@ -51,6 +51,7 @@
                 opacity: 0.35;
             }
 
+        */
         .game-section .content {
             position: relative;
             max-width: 800px;
@@ -105,7 +106,7 @@
             box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
          }
 
-        .video /*This effects the video and only the video*/{
+        /*.video*/ /*This effects the video and only the video*//*{
             display: block;
             margin: 20px auto;
             padding: 12px 24px;
@@ -116,6 +117,13 @@
             width: 800px;
             height: 450px;
             text-align: center;
+        }*/
+
+        .video {
+            width: 800px;
+            height: 450px;
+            margin: 20px auto;
+            display: block;
         }
 
     </style>
@@ -129,21 +137,20 @@
     </nav>
     <main id="projects">
         <section class="game-section" data-bg="#1f6f43">
-            <div class="video-bg">
-                <div id="player-0" data-videoid="yX5qwsXCWRs" class="video"></div>
-            </div>
             <div class="content">
                 <h1>Phantom Feline</h1>
+
+                <div id="player-0" data-videoid="yX5qwsXCWRs" class="video"></div>
+
                 <p>Stealth puzzle game about a ghost cat vs asshole roombas.</p>
-                <a href="https://store.steampowered.com/app/3835880/Phantom_Feline/" >Steam</a>
+
+                <a href="https://store.steampowered.com/app/3835880/Phantom_Feline/">Steam</a>
             </div>
         </section>
         <section class="game-section" data-bg="#5b1d1d">
-            <div class="video-bg">
-                <div id="player-1" data-videoid="0AbfHWTDL54" class="video"></div>
-            </div>
             <div class="content">
                 <h1>Durian Heist</h1>
+                <div id="player-1" data-videoid="0AbfHWTDL54" class="video"></div>
                 <p>LAN co-op teamwork or scream at your friends.</p>
                 <a href="https://magmaw.itch.io/durianheist">Itch</a>
             </div>
