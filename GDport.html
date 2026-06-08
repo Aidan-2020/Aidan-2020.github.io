@@ -126,9 +126,133 @@
             display: block;
         }
 
+        /* action buttons row */
+        .game-section .actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+        .game-section .actions a {
+            display: inline-block;
+            margin: 0;
+            width: auto;
+        }
+        .learn-more-btn {
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        .learn-more-btn:hover { background: rgba(255,255,255,0.28); }
+
+        /* overlay */
+        .panel-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .panel-overlay.open { opacity: 1; pointer-events: all; }
+
+        /* slide-up panel */
+        .panel {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            max-height: 80vh;
+            background: #111;
+            color: white;
+            z-index: 101;
+            border-radius: 16px 16px 0 0;
+            overflow-y: auto;
+            padding: 2rem;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+            box-sizing: border-box;
+        }
+        .panel.open { transform: translateY(0); }
+
+        .panel-close {
+            position: absolute;
+            top: 1.25rem; right: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border: none; color: white;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .panel h2 { margin: 0 0 0.25rem; font-size: 2rem; }
+        .panel .tagline { color: rgba(255,255,255,0.5); margin: 0 0 1.75rem; font-size: 0.95rem; }
+
+        .panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 640px) { .panel-grid { grid-template-columns: 1fr; } }
+
+        .panel-section h3 {
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            margin: 0 0 0.6rem;
+        }
+        .panel-section p {
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .contributions-list { list-style: none; padding: 0; margin: 0 0 1.25rem; }
+        .contributions-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.82);
+        }
+        .contributions-list li::before { content: "→ "; color: rgba(255,255,255,0.3); }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .screenshots img {
+            width: 100%;
+            border-radius: 6px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .panel-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .panel-link {
+            padding: 8px 18px;
+            border: 1px solid rgba(255,255,255,0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        .panel-link:hover { background: rgba(255,255,255,0.1); }
+
     </style>
 </head>
 <body>
+    <div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
     <nav>
         <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
         <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
@@ -139,39 +263,132 @@
         <section class="game-section" data-bg="#1f6f43">
             <div class="content">
                 <h1>Phantom Feline</h1>
-
                 <div id="player-0" data-videoid="yX5qwsXCWRs" class="video"></div>
-
                 <p>Stealth puzzle game about a ghost cat vs asshole roombas.</p>
-
-                <a href="https://store.steampowered.com/app/3835880/Phantom_Feline/">Steam</a>
+                <div class="actions">
+                    <a href="https://store.steampowered.com/app/3835880/Phantom_Feline/">Steam</a>
+                    <button class="learn-more-btn" onclick="openPanel('panel-pf')">Learn more</button>
+                </div>
             </div>
         </section>
+
+        <div class="panel" id="panel-pf">
+            <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
+            <h2>Phantom Feline</h2>
+            <p class="tagline">Stealth puzzle · YOUR_ENGINE · YOUR_YEAR</p>
+            <div class="panel-grid">
+                <div class="panel-section">
+                    <h3>About</h3>
+                    <p>YOUR_LONGER_DESCRIPTION</p>
+                    <h3 style="margin-top:1.25rem">My contributions</h3>
+                    <ul class="contributions-list">
+                        <li>YOUR_CONTRIBUTION</li>
+                        <li>YOUR_CONTRIBUTION</li>
+                        <li>YOUR_CONTRIBUTION</li>
+                    </ul>
+                    <div class="panel-links">
+                        <a class="panel-link" href="https://store.steampowered.com/app/3835880/Phantom_Feline/">Steam</a>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshots">
+                        <img src="YOUR_SCREENSHOT_1" alt="Screenshot 1">
+                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
+                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
+                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                    </div>
+                </div>
+            </div>
+        </div>
         <section class="game-section" data-bg="#5b1d1d">
             <div class="content">
                 <h1>Durian Heist</h1>
                 <div id="player-1" data-videoid="0AbfHWTDL54" class="video"></div>
                 <p>LAN co-op teamwork or scream at your friends.</p>
-                <a href="https://magmaw.itch.io/durianheist">Itch</a>
+                <div class="actions">
+                    <a href="https://magmaw.itch.io/durianheist">Itch</a>
+                    <button class="learn-more-btn" onclick="openPanel('panel-dh')">Learn more</button>
+                </div>
             </div>
         </section>
+
+        <div class="panel" id="panel-dh">
+            <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
+            <h2>Durian Heist</h2>
+            <p class="tagline">LAN co-op · YOUR_ENGINE · YOUR_YEAR</p>
+            <div class="panel-grid">
+                <div class="panel-section">
+                    <h3>About</h3>
+                    <p>YOUR_LONGER_DESCRIPTION</p>
+                    <h3 style="margin-top:1.25rem">My contributions</h3>
+                    <ul class="contributions-list">
+                        <li>YOUR_CONTRIBUTION</li>
+                        <li>YOUR_CONTRIBUTION</li>
+                    </ul>
+                    <div class="panel-links">
+                        <a class="panel-link" href="https://magmaw.itch.io/durianheist">Itch.io</a>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshots">
+                        <img src="YOUR_SCREENSHOT_1" alt="Screenshot 1">
+                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
+                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
+                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                    </div>
+                </div>
+            </div>
+        </div>
         <section class="game-section" data-bg="#3b5f8a">
             <div class="content">
                 <h1>Danger! Ice Skater</h1>
-
                 <div id="player-2" data-videoid="ZlI1MutaNZQ" class="video"></div>
-
                 <p>
                     Skate circles in the ice to defeat enemies. Play as the titular Ice Skater,
                     dodge relentless enemies, and carve holes in the ice for your foes to fall into.
                     Built for GMTK Game Jam 2025.
                 </p>
-
-                <a href="https://github.com/EvanMcRae/Danger-Ice-Skater">GitHub</a>
-                <a href="https://evanmcrae.itch.io/danger-ice-skater">Itch</a>
-                <a href="https://itch.io/jam/gmtk-2025/rate/3773525">Game Jam Page</a>
+                <div class="actions">
+                    <a href="https://github.com/EvanMcRae/Danger-Ice-Skater">GitHub</a>
+                    <a href="https://evanmcrae.itch.io/danger-ice-skater">Itch</a>
+                    <a href="https://itch.io/jam/gmtk-2025/rate/3773525">Game Jam Page</a>
+                    <button class="learn-more-btn" onclick="openPanel('panel-dis')">Learn more</button>
+                </div>
             </div>
         </section>
+
+        <div class="panel" id="panel-dis">
+            <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
+            <h2>Danger! Ice Skater</h2>
+            <p class="tagline">GMTK Game Jam 2025 · YOUR_ENGINE</p>
+            <div class="panel-grid">
+                <div class="panel-section">
+                    <h3>About</h3>
+                    <p>YOUR_LONGER_DESCRIPTION</p>
+                    <h3 style="margin-top:1.25rem">My contributions</h3>
+                    <ul class="contributions-list">
+                        <li>YOUR_CONTRIBUTION</li>
+                        <li>YOUR_CONTRIBUTION</li>
+                    </ul>
+                    <div class="panel-links">
+                        <a class="panel-link" href="https://github.com/EvanMcRae/Danger-Ice-Skater">GitHub</a>
+                        <a class="panel-link" href="https://evanmcrae.itch.io/danger-ice-skater">Itch.io</a>
+                        <a class="panel-link" href="https://itch.io/jam/gmtk-2025/rate/3773525">Game Jam Page</a>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshots">
+                        <img src="YOUR_SCREENSHOT_1" alt="Screenshot 1">
+                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
+                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
+                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--<section class="game-section" data-bg="#6b3f2a">
             <div class="content">
@@ -328,6 +545,26 @@
             { threshold: 0.6 }
         );
         sections.forEach(section => observer.observe(section));
+
+        // Panel open/close
+        let currentPanel = null;
+
+        function openPanel(id) {
+            if (currentPanel) currentPanel.classList.remove('open');
+            currentPanel = document.getElementById(id);
+            currentPanel.classList.add('open');
+            document.getElementById('overlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePanel() {
+            if (currentPanel) currentPanel.classList.remove('open');
+            document.getElementById('overlay').classList.remove('open');
+            document.body.style.overflow = '';
+            currentPanel = null;
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
     </script>
 </body>
 </html>
