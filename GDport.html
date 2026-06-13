@@ -381,7 +381,7 @@
                 <div class="panel-section">
                     <h3>Screenshots</h3>
                     <div class="screenshots">
-                        <img src="YOUR_SCREENSHOT_1" alt="Screenshot 1">
+                        <img src="dangerIICE.png" alt="Screenshot 1">
                         <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
                         <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
                         <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
@@ -390,7 +390,7 @@
             </div>
         </div>
 
-        <!--<section class="game-section" data-bg="#6b3f2a">
+        <section class="game-section" data-bg="#6b3f2a">
             <div class="content">
                 <h1>Rigged Referee</h1>
 
@@ -398,13 +398,44 @@
 
                 <p>
                     Play as a referee trying to rig boxing matches without getting caught.
-                    Built during a 48-hour game jam. Learned fast iteration, design under pressure,
-                    and not completely losing my shit.
+                    Built during a 48-hour game jam.
                 </p>
 
                 <a href="https://evanmcrae.itch.io/rigged-referee">Itch</a>
+                <button class="learn-more-btn" onclick="openPanel('panel-RR')">Learn more</button>
             </div>
         </section>
+
+        <div class="panel" id="panel-RR">
+            <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
+            <h2>Danger! Ice Skater</h2>
+            <p class="tagline">GMTK Game Jam 2023 · Unity 2D</p>
+            <div class="panel-grid">
+                <div class="panel-section">
+                    <h3>About</h3>
+                    <p>I was a programmer and game designer. I made the boxer ai, which uses a state machine and random number generation to make a lifelike boxer fight between the boxing non player characters. They move, punch, and block with random timing, but the numbers are adjusted enough it keeps you on your toes as the referee trying to score, and rig the fight!. Every suspicious call raises the suspicion meter, but you have to rig the fight to win. It was a fun team experience and I loved bringing the game to life with the boxer's behaviour.</p>
+                    <h3 style="margin-top:1.25rem">My contributions</h3>
+                    <ul class="contributions-list">
+                        <li>Programming</li>
+                        <li>Game Design</li>
+                    </ul>
+                    <div class="panel-links">
+                        <a class="panel-link" href="https://github.com/EvanMcRae/Rigged-Referee">GitHub</a>
+                        <a class="panel-link" href="https://evanmcrae.itch.io/rigged-referee">Itch.io</a>
+                        <a class="panel-link" href="https://itch.io/jam/gmtk-2023/rate/2161732">Game Jam Page</a>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshots">
+                        <img src="RR.png" alt="Screenshot 1">
+                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
+                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
+                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section class="game-section" data-bg="#4c2f5e">
             <div class="content">
@@ -418,10 +449,84 @@
                 </p>
 
                 <a href="https://ladyakemi.itch.io/satyr">Itch</a>
+                <button class="learn-more-btn" onclick="openPanel('panel-satyr')">Learn more</button>
             </div>
         </section>
 
-        <section class="game-section" data-bg="#2d4d42">
+        <div class="panel" id="panel-satyr">
+            <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
+            <h2>Danger! Ice Skater</h2>
+            <p class="tagline">2021 · Unity 2D</p>
+            <div class="panel-grid">
+                <div class="panel-section">
+                    <h3>About</h3>
+                    <p>In my freshman year I joined a senior in art and animation who was making a video game for their final project. I was a programmer, game designer, organizer, and presenter. Over the course of the year we made this 2d exploration game as an homage to Hollow Knight and Hoa. So there’s backtracking, secrets, lore, and a bossfight. </p>
+                    <h3 style="margin-top:1.25rem">My contributions</h3>
+                    <ul class="contributions-list">
+                        <li>Programming</li>
+                        <li>Game Design</li>
+                    </ul>
+                    <div class="panel-links">
+                        <a class="panel-link" href="https://github.com/EvanMcRae/Satyr">GitHub</a>
+                        <a class="panel-link" href="https://ladyakemi.itch.io/satyr">Itch.io</a>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshots">
+                        <img src="S.png" alt="Screenshot 1">
+                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
+                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
+                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="game-section" data-bg="#4c2f5e">
+            <div class="content">
+                <h1>Mission to Europa</h1>
+
+                <div id="player-5" data-videoid="YOUR_VIDEO_ID_HERE" class="video"></div>
+
+                <p>
+                    Educational in person role playing game, like DND.
+                </p>
+
+                <a href="https://ixlcourses.umbc.edu/umbc/course/course.aspx?C=74">UMBC page</a>
+                <button class="learn-more-btn" onclick="openPanel('panel-Mission to Europa')">Learn more</button>
+            </div>
+        </section>
+
+        <div class="panel" id="panel-Mission to Europa">
+            <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
+            <h2>Danger! Ice Skater</h2>
+            <p class="tagline">2021 · Unity 2D</p>
+            <div class="panel-grid">
+                <div class="panel-section">
+                    <h3>About</h3>
+                    <p>I worked on this game as part of INDS 430 in the fall of 2023 at UMBC. The goal was to make a game for the astrobiology class to replace their final exam, instead they would play this game. Over the course of the semester we talked with the astrobiologists and came up with game mechanics and rules. I helped design some and create content like videos for the game. It was a success and is continued today under the name Mission to Mars, and they are trying to expand to other classes as well.</p>
+                    <h3 style="margin-top:1.25rem">My contributions</h3>
+                    <ul class="contributions-list">
+                        <li>Game Design</li>
+                    </ul>
+                    <div class="panel-links">
+                        <a href="https://ixlcourses.umbc.edu/umbc/course/course.aspx?C=74">UMBC page</a>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <h3>Screenshots</h3>
+                    <div class="screenshots">
+                        <img src="Mission to Europa Logo.png" alt="Screenshot 1">
+                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
+                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
+                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<section class="game-section" data-bg="#2d4d42">
             <div class="content">
                 <h1>Waiting At The Door</h1>
 
