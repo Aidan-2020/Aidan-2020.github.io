@@ -4,38 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aidan Brown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-void: #150d12;
+            --bg-glow: #2e1811;
+            --coral: #ff6b4a;
+            --coral-soft: #ffab91;
+            --coral-deep: #ff3d5a;
+            --text-primary: #fbf1ec;
+            --text-secondary: #cbb2a8;
+            --border: #3f2620;
+            --border-hover: #6b382a;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
             padding: 0;
-            background-color: white;
-            font-family: Arial, sans-serif;
+            background: radial-gradient(ellipse 120% 80% at 50% -10%, var(--bg-glow) 0%, var(--bg-void) 55%);
+            background-attachment: fixed;
+            font-family: 'Inter', Arial, sans-serif;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            color: var(--text-primary);
         }
 
         nav {
             display: flex;
             justify-content: space-around;
             width: 100%;
+            background-color: rgba(21, 13, 18, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .nav-button {
             width: 25%;
-            padding: 15px 25px;
-            font-size: 20px;
+            padding: 18px 25px;
+            font-size: 16px;
             background: none;
             border: none;
+            border-bottom: 2px solid transparent;
             cursor: pointer;
-            transition: all 0.3s ease;
-            color: purple;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
+            transition: all 0.25s ease;
+            color: var(--coral-soft);
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .nav-button:hover {
-            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+            color: var(--text-primary);
+            border-bottom-color: var(--coral);
+        }
+
+        .nav-button.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--coral);
         }
 
         .content {
@@ -45,10 +78,11 @@
             justify-content: flex-start;
             align-items: center;
             padding-top: 10vh;
+            padding-bottom: 8vh;
         }
 
         h1, .subtitle, .section-title {
-            background-image: linear-gradient(90deg, rgba(194, 57, 248, 1), rgba(48, 53, 97, 1));
+            background-image: linear-gradient(90deg, var(--coral-soft), var(--coral), var(--coral-deep));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -56,37 +90,68 @@
         }
 
         h1 {
-            font-size: 6vw;
-            font-weight: bold;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -0.01em;
         }
 
         .subtitle {
-            font-size: 2vw;
-            font-weight: bold;
+            font-size: clamp(1rem, 2vw, 1.4rem);
+            font-weight: 600;
         }
 
         .section {
-            width: 80%;
-            margin-top: 50px;
+            width: 85%;
+            max-width: 700px;
+            margin-top: 56px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%, transparent 130%);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
         }
 
         .section-title {
-            font-size: 3vw;
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 700;
+            margin-bottom: 16px;
         }
 
         .section-content {
-            font-size: 1.2vw;
-            color: #333;
-            text-align: center;  /* Changed from justify to center */
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.65;
+        }
+
+        .section-content a {
+            color: var(--coral);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .section-content a:hover {
+            color: var(--coral-soft);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 720px) {
+            nav { flex-wrap: wrap; }
+            .nav-button { width: 50%; font-size: 14px; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <button class="nav-button">Home</button>
+        <button class="nav-button active">Home</button>
         <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
         <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
         <button class="nav-button" onclick="window.location.href='abtMe.html'">More About Me</button>
@@ -94,11 +159,11 @@
     <div class="content">
         <h1>Aidan Brown</h1>
         <p class="subtitle">Programmer | Game Designer/Developer | New Grad</p>
-        
+
         <div class="section">
             <h2 class="section-title">About Me</h2>
             <p class="section-content">
-                Computer science graduate from University of Maryland, Baltimore County.  Graduated Spring 2025.  Dual concentration in Game Design and AI/ML.  Passionate about game development and design, AI/ML, robotics and programming in general.  Have completed many game projects and often served as the team lead on these school projects.
+                Computer science graduate from University of Maryland, Baltimore County. Graduated Spring 2025. Dual concentration in Game Design and AI/ML. Passionate about game development and design, AI/ML, robotics and programming in general. Have completed many game projects and often served as the team lead on these school projects.
             </p>
         </div>
 
