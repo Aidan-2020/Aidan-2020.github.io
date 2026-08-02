@@ -4,43 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Aidan Brown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-void: #081416;
+            --bg-glow: #0f2a2e;
+            --cyan: #22d3ee;
+            --cyan-soft: #9be8f5;
+            --cyan-deep: #0891b2;
+            --text-primary: #eafcff;
+            --text-secondary: #a9c6cb;
+            --border: #1f3d42;
+            --border-hover: #2f5a61;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
             padding: 0;
-            background-color: white;
-            font-family: Arial, sans-serif;
+            background: radial-gradient(ellipse 120% 80% at 50% -10%, var(--bg-glow) 0%, var(--bg-void) 55%);
+            background-attachment: fixed;
+            font-family: 'Inter', Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            color: var(--text-primary);
         }
 
         nav {
             display: flex;
             justify-content: space-around;
             width: 100%;
+            background-color: rgba(8, 20, 22, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .nav-button {
             width: 25%;
-            padding: 15px 25px;
-            font-size: 20px;
+            padding: 18px 25px;
+            font-size: 16px;
             background: none;
             border: none;
+            border-bottom: 2px solid transparent;
             cursor: pointer;
-            transition: all 0.3s ease;
-            color: purple;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
+            transition: all 0.25s ease;
+            color: var(--cyan-soft);
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .nav-button:hover {
-            box-shadow: inset 0px -7px 7px 3px rgba(0, 0, 0, 0.4);
+            color: var(--text-primary);
+            border-bottom-color: var(--cyan);
+        }
+
+        .nav-button.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--cyan);
         }
 
         .gradient-text {
-            background-image: linear-gradient(90deg, #FF00FF, #8A2BE2, #4B0082, #0000FF);
+            background-image: linear-gradient(90deg, var(--cyan-soft), var(--cyan), var(--cyan-deep));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -48,18 +81,31 @@
         }
 
         h1 {
-            font-size: 4vw;
-            font-weight: bold;
-            margin-bottom: 40px;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 700;
+            margin: 48px 0 40px;
+            letter-spacing: -0.01em;
         }
 
         .section {
-            width: 80%;
-            margin-bottom: 100px;
+            width: 85%;
+            max-width: 800px;
+            margin-bottom: 80px;
         }
 
         .subsection {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
             margin-bottom: 20px;
+            background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%, transparent 130%);
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .subsection:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
         }
 
         .transition-wrapper {
@@ -69,8 +115,10 @@
 
         .element1 {
             transition: 1s;
-            font-size: 2vw;
-            line-height: 2;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            font-weight: 600;
+            line-height: 1.4;
             transform: translateY(18px);
         }
 
@@ -79,14 +127,21 @@
         }
 
         .content {
-            font-size: 1.2vw;
-            color: #333;
+            font-size: 1rem;
+            color: var(--text-secondary);
             text-align: center;
+            line-height: 1.65;
+            margin: 0;
         }
 
         .load-transition {
             transform: translateY(18px);
             transition: 1s;
+        }
+
+        @media (max-width: 720px) {
+            nav { flex-wrap: wrap; }
+            .nav-button { width: 50%; font-size: 14px; }
         }
     </style>
 </head>
@@ -95,12 +150,12 @@
         <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
         <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
         <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
-        <button class="nav-button">More About Me</button>
+        <button class="nav-button active">More About Me</button>
     </nav>
 
     <div class="section">
         <h1 class="gradient-text load-transition">Who I Am</h1>
-        
+
         <div class="subsection">
             <div class="transition-wrapper">
                 <div class="element1 gradient-text load-transition">UMBC New Grad</div>
@@ -139,7 +194,7 @@
 
     <div class="section">
         <h1 class="gradient-text">My Interests</h1>
-        
+
         <div class="subsection">
             <div class="transition-wrapper">
                 <div class="element1 gradient-text">Games</div>
