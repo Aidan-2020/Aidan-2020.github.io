@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Portfolio - Aidan Brown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-void: #120a1f;
+            --bg-surface: #1c1130;
+            --bg-surface-2: #271a42;
+            --purple-mid: #6d28d9;
+            --purple-bright: #a855f7;
+            --purple-pale: #c4b5fd;
+            --accent: #f0b429;
+            --accent-dim: #caa04a;
+            --text-primary: #f3eefc;
+            --text-secondary: #b3a3d1;
+            --border: #34204f;
+            --border-hover: #4c2f77;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(ellipse 120% 80% at 50% -10%, #2a1748 0%, var(--bg-void) 55%);
+            background-attachment: fixed;
+            font-family: 'Inter', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--text-primary);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            background-color: rgba(18, 10, 31, 0.85);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav-button {
+            width: 25%;
+            padding: 18px 25px;
+            font-size: 16px;
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: var(--purple-pale);
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-button:hover {
+            color: var(--text-primary);
+            border-bottom-color: var(--accent);
+        }
+
+        .nav-button.active {
+            color: var(--text-primary);
+            border-bottom-color: var(--accent);
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(90deg, var(--purple-pale), var(--purple-bright), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin: 48px 0 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .subhead {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .portfolio-container {
+            width: 88%;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+        }
+
+        .project-card {
+            background: linear-gradient(160deg, var(--bg-surface) 0%, var(--bg-void) 130%);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 32px;
+            margin-bottom: 28px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+            box-shadow: 0 12px 32px -8px rgba(109, 40, 217, 0.35);
+        }
+
+        .project-title {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background-color: rgba(109, 40, 217, 0.18);
+            color: var(--purple-pale);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .tag:nth-of-type(3n+2) {
+            background-color: rgba(240, 180, 41, 0.12);
+            color: var(--accent);
+            border-color: rgba(240, 180, 41, 0.3);
+        }
+
+        .tag:nth-of-type(3n) {
+            background-color: rgba(168, 85, 247, 0.14);
+            color: var(--purple-bright);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-link {
+            background-color: var(--purple-mid);
+            color: var(--text-primary);
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.25s ease;
+        }
+
+        .project-link:hover {
+            background-color: var(--accent);
+            color: var(--bg-void);
+        }
+
+        .caption {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* ---- Interactive walkthrough (LIME project) ---- */
+        .walkthrough {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0 24px;
+            background: rgba(0, 0, 0, 0.18);
+        }
+
+        .walkthrough-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .wt-tab {
+            background: var(--bg-surface-2);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .wt-tab:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+        }
+
+        .wt-tab.active {
+            background: linear-gradient(135deg, var(--purple-mid), var(--purple-bright));
+            color: white;
+            border-color: transparent;
+        }
+
+        .wt-body {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .wt-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .wt-text strong {
+            color: var(--text-primary);
+        }
+
+        .wt-image img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .wt-image .caption {
+            margin-top: 8px;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 720px) {
+            .wt-body {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                flex-wrap: wrap;
+            }
+            .nav-button {
+                width: 50%;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
+        <button class="nav-button active">Programming Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
+        <button class="nav-button" onclick="window.location.href='abtMe.html'">More About Me</button>
+    </nav>
+
+    <h1 class="gradient-text">Programming Portfolio</h1>
+    <p class="subhead">Machine learning, computer vision, and full-stack projects</p>
+
+    <div class="portfolio-container">
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">Blood cell CV model with LIME — model interpretability</h2>
+            <p class="project-description">
+                I worked as part of a group training a neural network to classify images of red blood cells as either healthy or not. My focus was model interpretability — using LIME to understand which pixels actually drove the model's decisions rather than treating it as a black box, so the prediction could be checked against what a person would expect to matter.
+            </p>
+
+            <div class="walkthrough">
+                <div class="walkthrough-tabs">
+                    <button class="wt-tab active" data-panel="data">Data & Preprocessing</button>
+                    <button class="wt-tab" data-panel="model">Model (AlexNet)</button>
+                    <button class="wt-tab" data-panel="lime">Explainability (LIME)</button>
+                    <button class="wt-tab" data-panel="results">Results</button>
+                </div>
+
+                <div class="wt-body">
+                    <div class="wt-text" id="wt-text">
+                        <!-- filled by JS -->
+                    </div>
+                    <div class="wt-image">
+                        <img src="image/lime-saliency-map.png" alt="LIME saliency map highlighting the pixels that most influenced the model's healthy vs. sickled cell prediction" id="wt-img">
+                        <p class="caption" id="wt-caption">LIME saliency map — highlighted regions show which pixels most influenced the model's classification.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">LIME</span>
+                <span class="tag">Interpretability</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/Gradient9098/sickle_cell_detection" class="project-link">GitHub Repo</a>
+                <a href="https://drive.google.com/file/d/1pFgz7_LAgmx1CjXvirIdE6TCb6uEwe_B/view?usp=drivesdk" class="project-link">Final Report</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">Fine tuned language model and small labeled dataset</h2>
+            <p class="project-description">
+                A project for a Natural Language Processing class, created a small dataset of labeled data, fine tuned a model and wrote a report. We fine tuned a Flan-T5-small model to take in short legal documents and then produce a summary that anyone can understand. We also created a labeled dataset of legal documents taken from sources like legal_pile on HuggingFace and the summaries we wrote for them. In the end we turned in a final report, in ACL style, and all of our code, data, and our final model.
+            </p>
+            <img src="image/flan-loss-chart.png" alt="Training and validation loss by epoch for the fine-tuned Flan-T5-small model" style="max-width:100%;border-radius:6px;margin-bottom:10px;border:1px solid var(--border);">
+            <p class="caption">Training and validation loss by epoch, fine-tuning Flan-T5-small on our legal document summarization dataset.</p>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">language model</span>
+                <span class="tag">dataset</span>
+                <span class="tag">PyTorch</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/vvikasreddy/JargonAI" class="project-link">GitHub Repo</a>
+                <a href="Legal Document Summarizer - Report.docx" class="project-link">Final Report</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">UK Road Trip Planner — a custom travel app</h2>
+            <p class="project-description">
+                A full-stack travel planning site I built for a 10-day UK road trip with friends — day-by-day itinerary, an interactive Leaflet.js route map, a packing checklist, and a live budget calculator backed by Firebase Firestore so everyone in the group sees the same real-time totals and can mark items as skipped. Built entirely with modern AI coding tools — Codex, Claude Code, and Cursor — to plan, build, and iterate on the whole thing, from the initial layout through the shared database sync.
+            </p>
+            <div class="project-tags">
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">Firebase Firestore</span>
+                <span class="tag">Leaflet.js</span>
+                <span class="tag">AI-Assisted Development</span>
+            </div>
+            <div class="project-links">
+                <a href="https://aidan-2020.github.io/uk-road-trip-2026/" class="project-link">Live Site</a>
+                <a href="https://github.com/Aidan-2020/uk-road-trip-2026" class="project-link">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">App with computer vision</h2>
+            <p class="project-description">
+                I am currently working on an app with a friend that is a gene sequence difference counter. Really it just counts the differences between two strings of equal length. We are implementing computer vision, so you can just point your camera to two gene sequences and it will automatically identify them and count the differences. There are other projects on the way as well.
+            </p>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">OpenCV</span>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/Aidan-2020/Bio-Project" class="project-link">GitHub Repo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">University Classes and Skills</h2>
+            <p class="project-description">
+                Through my time at UMBC I learned Python, C/C++, C#, and Ruby. I learned a lot about teamwork and version control. I used GitHub and Jira. I made video games, python and Java apps, webpages, a kernel, learned assembly, learned about algorithms and data structures, linear algebra and GUI. Typical comp sci major things, outside of school projects are on the way. I am currently taking classes in AI/ML, graphics for games, NLP and generative AI
+                <br><br>Relevant programming languages and classes:
+                <br>Graphics for Games (Work in Unreal Engine 5 and C++)
+                <br>Computer Graphics
+                <br>Python
+                <br>C/C++
+                <br>C#
+                <br>Introduction to Artificial Intelligence
+                <br>Introduction to Machine Learning
+                <br>Natural Language Processing
+                <br>Software Engineering
+                <br>Principles of Operating Systems
+                <br>Design and Analysis of Algorithms
+                <br>Graphical User Interface Programming
+                <br>Data Structures
+                <br>Linear Algebra
+            </p>
+            <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Teamwork</span>
+                <span class="tag">Version Control</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">Data Structures</span>
+                <span class="tag">Linear Algebra</span>
+                <span class="tag">GUI</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h2 class="project-title gradient-text">High School</h2>
+            <p class="project-description">
+                I started learning programming in high school, there was an IT/IMP (interactive media production) program. I learned Python, C++, Java, HTML CSS JavaScript, and C# there first. I made a bunch of games in the Unity game engine that are now mostly lost to me. It is where I first learned about version control, web development and algorithms and data structures basics.
+            </p>
+            <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Unity</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">C++</span>
+                <span class="tag">Java</span>
+                <span class="tag">C#</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Content for each stage of the LIME project walkthrough.
+        // NOTE: numbers/details marked with [confirm] should be checked/edited by Aidan before publishing.
+        const panels = {
+            data: {
+                text: `<strong>Dataset.</strong> Trained and evaluated on a labeled set of 12,000+ microscope images of red blood cells [confirm exact count], split between healthy and sickled cells. Images were preprocessed — resized and normalized — before being fed into the model, and the classes were checked for balance so the model wasn't just learning to guess the majority class.`,
+                img: "image/lime-saliency-map.png",
+                caption: "Sample of the labeled red blood cell dataset used for training."
+            },
+            model: {
+                text: `<strong>Architecture.</strong> We used AlexNet, a convolutional neural network, adapted for this binary healthy-vs-sickled classification task. As a group we split the work across data handling, model training, and evaluation — my own focus was on the interpretability side, covered in the next tab.`,
+                img: "image/lime-saliency-map.png",
+                caption: "AlexNet-based classifier used for healthy vs. sickled cell prediction."
+            },
+            lime: {
+                text: `<strong>My contribution.</strong> I applied LIME (Local Interpretable Model-Agnostic Explanations) to see which pixels the model actually relied on for each prediction — so we could sanity-check whether it was looking at the cell itself, rather than background noise or imaging artifacts. We also tried Grad-CAM as a second explainability method for comparison, but couldn't get it working cleanly in time; that's written up in the final report.`,
+                img: "image/lime-saliency-map.png",
+                caption: "LIME saliency map — highlighted regions show which pixels most influenced the model's classification."
+            },
+            results: {
+                text: `<strong>Outcome.</strong> The model reached roughly 90% accuracy on the held-out test set [confirm exact number]. Just as important for a medical-adjacent task: the LIME explanations showed the model was consistently focusing on the cell body itself rather than spurious background regions, which gave us more confidence in the result beyond the accuracy number alone.`,
+                img: "image/lime-saliency-map.png",
+                caption: "LIME output used to validate that predictions were driven by the cell, not background artifacts."
+            }
+        };
+
+        const tabs = document.querySelectorAll('.wt-tab');
+        const textEl = document.getElementById('wt-text');
+        const imgEl = document.getElementById('wt-img');
+        const captionEl = document.getElementById('wt-caption');
+
+        function showPanel(key) {
+            const p = panels[key];
+            textEl.innerHTML = p.text;
+            imgEl.src = p.img;
+            captionEl.textContent = p.caption;
+            tabs.forEach(t => t.classList.toggle('active', t.dataset.panel === key));
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => showPanel(tab.dataset.panel));
+        });
+
+        showPanel('data');
+    </script>
+</body>
+</html>
