@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-void: #150d12;
-            --bg-glow: #2e1811;
-            --coral: #ff6b4a;
-            --coral-soft: #ffab91;
-            --coral-deep: #ff3d5a;
-            --text-primary: #fbf1ec;
-            --text-secondary: #cbb2a8;
-            --border: #3f2620;
-            --border-hover: #6b382a;
+            --bg-void: #120a1f;
+            --bg-glow: #2a1748;
+            --purple-mid: #6d28d9;
+            --purple-bright: #a855f7;
+            --purple-pale: #c4b5fd;
+            --accent: #ff6b4a;
+            --accent-soft: #ffab91;
+            --text-primary: #f3eefc;
+            --text-secondary: #b3a3d1;
+            --border: #34204f;
+            --border-hover: #4c2f77;
         }
 
         * { box-sizing: border-box; }
@@ -38,7 +40,7 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
-            background-color: rgba(21, 13, 18, 0.85);
+            background-color: rgba(18, 10, 31, 0.85);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -55,7 +57,7 @@
             border-bottom: 2px solid transparent;
             cursor: pointer;
             transition: all 0.25s ease;
-            color: var(--coral-soft);
+            color: var(--purple-pale);
             font-family: 'Inter', Arial, sans-serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -63,12 +65,12 @@
 
         .nav-button:hover {
             color: var(--text-primary);
-            border-bottom-color: var(--coral);
+            border-bottom-color: var(--accent);
         }
 
         .nav-button.active {
             color: var(--text-primary);
-            border-bottom-color: var(--coral);
+            border-bottom-color: var(--accent);
         }
 
         .content {
@@ -82,7 +84,7 @@
         }
 
         h1, .subtitle, .section-title {
-            background-image: linear-gradient(90deg, var(--coral-soft), var(--coral), var(--coral-deep));
+            background-image: linear-gradient(90deg, var(--purple-pale), var(--purple-bright), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -110,12 +112,13 @@
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 32px;
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .section:hover {
             border-color: var(--border-hover);
             transform: translateY(-2px);
+            box-shadow: 0 12px 32px -8px rgba(109, 40, 217, 0.35);
         }
 
         .section-title {
@@ -133,13 +136,13 @@
         }
 
         .section-content a {
-            color: var(--coral);
+            color: var(--accent);
             text-decoration: none;
             font-weight: 500;
         }
 
         .section-content a:hover {
-            color: var(--coral-soft);
+            color: var(--accent-soft);
             text-decoration: underline;
         }
 
