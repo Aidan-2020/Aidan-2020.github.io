@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-void: #081416;
-            --bg-glow: #0f2a2e;
-            --cyan: #22d3ee;
-            --cyan-soft: #9be8f5;
-            --cyan-deep: #0891b2;
-            --text-primary: #eafcff;
-            --text-secondary: #a9c6cb;
-            --border: #1f3d42;
-            --border-hover: #2f5a61;
+            --bg-void: #120a1f;
+            --bg-glow: #2a1748;
+            --purple-mid: #6d28d9;
+            --purple-bright: #a855f7;
+            --purple-pale: #c4b5fd;
+            --accent: #22d3ee;
+            --accent-soft: #9be8f5;
+            --text-primary: #f3eefc;
+            --text-secondary: #b3a3d1;
+            --border: #34204f;
+            --border-hover: #4c2f77;
         }
 
         * { box-sizing: border-box; }
@@ -39,7 +41,7 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
-            background-color: rgba(8, 20, 22, 0.85);
+            background-color: rgba(18, 10, 31, 0.85);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -56,7 +58,7 @@
             border-bottom: 2px solid transparent;
             cursor: pointer;
             transition: all 0.25s ease;
-            color: var(--cyan-soft);
+            color: var(--purple-pale);
             font-family: 'Inter', Arial, sans-serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -64,16 +66,16 @@
 
         .nav-button:hover {
             color: var(--text-primary);
-            border-bottom-color: var(--cyan);
+            border-bottom-color: var(--accent);
         }
 
         .nav-button.active {
             color: var(--text-primary);
-            border-bottom-color: var(--cyan);
+            border-bottom-color: var(--accent);
         }
 
         .gradient-text {
-            background-image: linear-gradient(90deg, var(--cyan-soft), var(--cyan), var(--cyan-deep));
+            background-image: linear-gradient(90deg, var(--purple-pale), var(--purple-bright), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -100,12 +102,13 @@
             padding: 24px 28px;
             margin-bottom: 20px;
             background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%, transparent 130%);
-            transition: border-color 0.3s ease, transform 0.3s ease;
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .subsection:hover {
             border-color: var(--border-hover);
             transform: translateY(-2px);
+            box-shadow: 0 12px 32px -8px rgba(109, 40, 217, 0.35);
         }
 
         .transition-wrapper {
