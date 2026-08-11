@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
+<<<<<<< Updated upstream
             --bg-void: #120a1f;
             --bg-glow: #2a1748;
             --purple-mid: #6d28d9;
@@ -20,6 +21,17 @@
             --text-secondary: #b3a3d1;
             --border: #34204f;
             --border-hover: #4c2f77;
+=======
+            --bg-void: #120e0a;
+            --bg-glow: #2e2013;
+            --amber: #e0a94a;
+            --amber-soft: #f2cf8e;
+            --teal-deep: #3a5a66;
+            --text-primary: #f7f0e4;
+            --text-secondary: #c9b8a0;
+            --border: #3a2e1e;
+            --border-hover: #5c4526;
+>>>>>>> Stashed changes
         }
 
         * { box-sizing: border-box; }
@@ -27,8 +39,12 @@
         body {
             margin: 0;
             padding: 0;
+<<<<<<< Updated upstream
             background: radial-gradient(ellipse 120% 80% at 50% -10%, var(--bg-glow) 0%, var(--bg-void) 55%);
             background-attachment: fixed;
+=======
+            background-color: var(--bg-void);
+>>>>>>> Stashed changes
             font-family: 'Inter', Arial, sans-serif;
             display: flex;
             flex-direction: column;
@@ -40,7 +56,11 @@
             display: flex;
             justify-content: space-around;
             width: 100%;
+<<<<<<< Updated upstream
             background-color: rgba(18, 10, 31, 0.85);
+=======
+            background-color: rgba(18, 14, 10, 0.85);
+>>>>>>> Stashed changes
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border);
             position: sticky;
@@ -57,7 +77,11 @@
             border-bottom: 2px solid transparent;
             cursor: pointer;
             transition: all 0.25s ease;
+<<<<<<< Updated upstream
             color: var(--purple-pale);
+=======
+            color: var(--amber-soft);
+>>>>>>> Stashed changes
             font-family: 'Inter', Arial, sans-serif;
             font-weight: 600;
             letter-spacing: 0.02em;
@@ -65,11 +89,16 @@
 
         .nav-button:hover {
             color: var(--text-primary);
+<<<<<<< Updated upstream
             border-bottom-color: var(--accent);
+=======
+            border-bottom-color: var(--amber);
+>>>>>>> Stashed changes
         }
 
         .nav-button.active {
             color: var(--text-primary);
+<<<<<<< Updated upstream
             border-bottom-color: var(--accent);
         }
 
@@ -85,6 +114,31 @@
 
         h1, .subtitle, .section-title {
             background-image: linear-gradient(90deg, var(--purple-pale), var(--purple-bright), var(--accent));
+=======
+            border-bottom-color: var(--amber);
+        }
+
+        /* ---- Photo hero ---- */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 78vh;
+            background-image:
+                linear-gradient(180deg, rgba(18,14,10,0.15) 0%, rgba(18,14,10,0.55) 55%, var(--bg-void) 100%),
+                url('image/fish3.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            text-align: center;
+            padding: 0 20px 60px;
+        }
+
+        h1, .subtitle, .section-title {
+            background-image: linear-gradient(90deg, var(--amber-soft), var(--amber), var(--teal-deep));
+>>>>>>> Stashed changes
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -104,10 +158,27 @@
             font-weight: 600;
         }
 
+<<<<<<< Updated upstream
         .section {
             width: 85%;
             max-width: 700px;
             margin-top: 56px;
+=======
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 56px;
+            padding-bottom: 8vh;
+        }
+
+        .section {
+            width: 85%;
+            max-width: 700px;
+            margin-top: 32px;
+>>>>>>> Stashed changes
             background: linear-gradient(160deg, rgba(255,255,255,0.03) 0%, transparent 130%);
             border: 1px solid var(--border);
             border-radius: 14px;
@@ -118,7 +189,11 @@
         .section:hover {
             border-color: var(--border-hover);
             transform: translateY(-2px);
+<<<<<<< Updated upstream
             box-shadow: 0 12px 32px -8px rgba(109, 40, 217, 0.35);
+=======
+            box-shadow: 0 12px 32px -8px rgba(224, 169, 74, 0.2);
+>>>>>>> Stashed changes
         }
 
         .section-title {
@@ -136,19 +211,31 @@
         }
 
         .section-content a {
+<<<<<<< Updated upstream
             color: var(--accent);
+=======
+            color: var(--amber);
+>>>>>>> Stashed changes
             text-decoration: none;
             font-weight: 500;
         }
 
         .section-content a:hover {
+<<<<<<< Updated upstream
             color: var(--accent-soft);
+=======
+            color: var(--amber-soft);
+>>>>>>> Stashed changes
             text-decoration: underline;
         }
 
         @media (max-width: 720px) {
             nav { flex-wrap: wrap; }
             .nav-button { width: 50%; font-size: 14px; }
+<<<<<<< Updated upstream
+=======
+            .hero { min-height: 60vh; background-position: center 20%; }
+>>>>>>> Stashed changes
         }
     </style>
 </head>
@@ -159,10 +246,20 @@
         <button class="nav-button" onclick="window.location.href='GDport.html'">Game Development Portfolio</button>
         <button class="nav-button" onclick="window.location.href='abtMe.html'">More About Me</button>
     </nav>
+<<<<<<< Updated upstream
     <div class="content">
         <h1>Aidan Brown</h1>
         <p class="subtitle">Programmer | Game Designer/Developer | New Grad</p>
 
+=======
+
+    <div class="hero">
+        <h1>Aidan Brown</h1>
+        <p class="subtitle">Programmer | Game Designer/Developer | New Grad</p>
+    </div>
+
+    <div class="content">
+>>>>>>> Stashed changes
         <div class="section">
             <h2 class="section-title">About Me</h2>
             <p class="section-content">
@@ -180,4 +277,8 @@
         </div>
     </div>
 </body>
+<<<<<<< Updated upstream
 </html>
+=======
+</html>
+>>>>>>> Stashed changes
