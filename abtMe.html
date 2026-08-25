@@ -11,6 +11,7 @@
         :root {
             --bg-void: #120e0a;
             --bg-glow: #2e2013;
+            --bg-panel: #1c150e;
             --amber: #e0a94a;
             --amber-soft: #f2cf8e;
             --teal-deep: #3a5a66;
@@ -110,30 +111,27 @@
             box-shadow: 0 12px 32px -8px rgba(224, 169, 74, 0.2);
         }
 
-        /* Photo-backed subsection — text pinned to the bottom over a dark scrim */
+        /* Photo-backed subsection — fixed photo banner on top, solid text panel below.
+           The panel has no fixed height, so it always grows to fit the text —
+           nothing can ever get cut off or lost against busy photo detail. */
         .subsection.photo {
-            position: relative;
-            min-height: 260px;
+            padding: 0;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
+        }
+
+        .subsection.photo .photo-banner {
+            width: 100%;
+            height: 200px;
+            flex-shrink: 0;
             background-size: cover;
             background-position: center;
-            overflow: hidden;
         }
 
-        .subsection.photo::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: linear-gradient(180deg, rgba(18,14,10,0.05) 0%, rgba(18,14,10,0.55) 60%, rgba(18,14,10,0.9) 100%);
-            z-index: 0;
-        }
-
-        .subsection.photo .transition-wrapper,
-        .subsection.photo .content {
-            position: relative;
-            z-index: 1;
+        .subsection.photo .photo-text {
+            padding: 22px 28px 26px;
+            background-color: var(--bg-panel);
         }
 
         .transition-wrapper {
@@ -162,10 +160,6 @@
             margin: 0;
         }
 
-        .subsection.photo .content {
-            color: #ece2d2;
-        }
-
         .load-transition {
             transform: translateY(18px);
             transition: 1s;
@@ -174,6 +168,7 @@
         @media (max-width: 720px) {
             nav { flex-wrap: wrap; }
             .nav-button { width: 50%; font-size: 14px; }
+            .subsection.photo .photo-banner { height: 160px; }
         }
     </style>
 </head>
@@ -188,57 +183,78 @@
     <div class="section">
         <h1 class="gradient-text load-transition">Who I Am</h1>
 
-        <div class="subsection photo" style="background-image: url('image/UMBC.jpg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text load-transition">UMBC New Grad</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/UMBC.jpg');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text load-transition">UMBC New Grad</div>
+                </div>
+                <p class="content">Computer science graduate from the University of Maryland, Baltimore County. I live near campus and spend a lot of time in the library working. I am not planning on going to grad school. I have enjoyed my time at UMBC and learned a lot about computer science and game development.</p>
             </div>
-            <p class="content">Computer science graduate from the University of Maryland, Baltimore County. I live near campus and spend a lot of time in the library working. I am not planning on going to grad school. I have enjoyed my time at UMBC and learned a lot about computer science and game development.</p>
         </div>
 
-        <div class="subsection photo" style="background-image: url('image/magFest1.jpg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text load-transition">Game Developer and Gate Agent</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/magFest1.jpg');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text load-transition">Indie Game Developer</div>
+                </div>
+                <p class="content">Passionate about game development and design, with experience in creating games and working in teams. I have been making games since high school. Just for fun or for class projects. I am also part of the UMBC game dev club. In the meantime I'm a gate agent at BWI airport.</p>
             </div>
-            <p class="content">Passionate about game development and design, with experience in creating games and working in teams. I have been making games since high school. Just for fun or for class projects. I am also part of the UMBC game dev club. In the meantime I'm a gate agent at BWI airport.</p>
         </div>
 
-        <div class="subsection photo" style="background-image: url('image/fish1.jpg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text load-transition">Maryland Native</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/fish1.jpg');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text load-transition">Maryland Native</div>
+                </div>
+                <p class="content">I grew up in Towson, Maryland with my family. I have a younger brother. I know some good restaurants in Towson and Timonium, and have some decent fishing spots as well. Went to school in Baltimore County, worked all my jobs and previous internships in the Timonium or Baltimore area.</p>
             </div>
-            <p class="content">I grew up in Towson, Maryland with my family. I have a younger brother. I know some good restaurants in Towson and Timonium, and have some decent fishing spots as well. Went to school in Baltimore County, worked all my jobs and previous internships in the Timonium or Baltimore area.</p>
         </div>
 
-        <div class="subsection photo" style="background-image: url('image/baltIndiePresentation.JPG');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text load-transition">Aspiring Professional</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/baltIndiePresentation.JPG');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text load-transition">Aspiring Professional</div>
+                </div>
+                <p class="content">I am aiming to become a skilled professional in either game development, AI/ML, or robotics. Or all three. I want to do something cool and fun in tech.</p>
             </div>
-            <p class="content">I am aiming to become a skilled professional in either game development, AI/ML, or robotics. Or all three. I want to do something cool and fun in tech.</p>
         </div>
 
-        <div class="subsection photo" style="background-image: url('image/presentingAtUMBC.jpeg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text load-transition">Why AI Safety and Alignment</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/lime-saliency-map.png');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text load-transition">Why AI Safety and Alignment</div>
+                </div>
+                <p class="content">I'm very interested in AI/ML and AI/ML safety, I think somebody needs to do it, and it needs to happen from the inside. Not only have I been interested in AI/ML for years and took coursework about it while getting my BS in CS, I think going forward in our lives AI safety is going to become more and more prominent and important.</p>
             </div>
-            <p class="content">I'm very interested in AI/ML and AI/ML safety, I think somebody needs to do it, and it needs to happen from the inside. Not only have I been interested in AI/ML for years and took coursework about it while getting my BS in CS, I think going forward in our lives AI safety is going to become more and more prominent and important.</p>
         </div>
     </div>
 
     <div class="section">
         <h1 class="gradient-text">My Interests</h1>
 
-        <div class="subsection photo" style="background-image: url('image/MagFest2.jpg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text">Games</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/MagFest2.jpg');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text">Games</div>
+                </div>
+                <p class="content">Passionate about playing and creating video games, exploring various genres and game design principles. I enjoy both single player and multiplayer games with friends. I also play Magic The Gathering, a trading card game, with my friends in person. Some recent favorites have been Sekiro, Hollow Knight, Hunt Showdown, The Finals, and Minecraft.</p>
             </div>
-            <p class="content">Passionate about playing and creating video games, exploring various genres and game design principles. I enjoy both single player and multiplayer games with friends. I also play Magic The Gathering, a trading card game, with my friends in person. Some recent favorites have been Sekiro, Hollow Knight, Hunt Showdown, The Finals, and Minecraft.</p>
         </div>
 
-        <div class="subsection photo" style="background-image: url('image/basketball6.jpg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text">Sports and Outdoors</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/basketball6.jpg');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text">Sports and Outdoors</div>
+                </div>
+                <p class="content">I like staying active and connected with nature. I do jiu jitsu on and off, and want to get into Karate, MMA, or boxing one day, but just as like a weekend warrior type deal. I play tennis and basketball when I can. I am really into fishing though, normal, fly fishing, beach, boat, whatever and wherever, I have even tried hand lining. I also like hiking and walking outside.</p>
             </div>
-            <p class="content">I like staying active and connected with nature. I do jiu jitsu on and off, and want to get into Karate, MMA, or boxing one day, but just as like a weekend warrior type deal. I play tennis and basketball when I can. I am really into fishing though, normal, fly fishing, beach, boat, whatever and wherever, I have even tried hand lining. I also like hiking and walking outside.</p>
         </div>
 
         <div class="subsection">
@@ -248,11 +264,14 @@
             <p class="content">I enjoy reading, my mom got me into reading as a kid. Read a few fiction series growing up, Percy Jackson included. Nowadays I do both fiction and nonfiction, mostly nonfiction. I would say my two most memorable books so far are Every Falling Star by Sungju Lee and The Choice by Edith Eger. Those are both nonfiction, which is my favorite kinda book, but the two most recent fiction books I remember reading were Dark Life (Kat Falls) and Loveless by Alice Oseman. Maybe sometime I will add my reading list here because there is a lot on it.</p>
         </div>
 
-        <div class="subsection photo" style="background-image: url('image/magFestMilkshake.jpg');">
-            <div class="transition-wrapper">
-                <div class="element1 gradient-text">Hanging Out with Friends</div>
+        <div class="subsection photo">
+            <div class="photo-banner" style="background-image: url('image/magFestMilkshake.jpg');"></div>
+            <div class="photo-text">
+                <div class="transition-wrapper">
+                    <div class="element1 gradient-text">Hanging Out with Friends</div>
+                </div>
+                <p class="content">I enjoy hanging out with my friends, walking/hiking/fishing and other random stuff, playing cards/basketball/videogames, we make videogames together sometimes, we go places like parks and museums. I have a couple friends in a band so I like going to their shows in Baltimore and Towson. Small parties and hangouts, just the usual.</p>
             </div>
-            <p class="content">I enjoy hanging out with my friends, walking/hiking/fishing and other random stuff, playing cards/basketball/videogames, we make videogames together sometimes, we go places like parks and museums. I have a couple friends in a band so I like going to their shows in Baltimore and Towson. Small parties and hangouts, just the usual.</p>
         </div>
     </div>
 
