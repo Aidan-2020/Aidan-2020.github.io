@@ -296,9 +296,9 @@
 
             <div class="walkthrough">
                 <div class="walkthrough-tabs">
-                    <button class="wt-tab" data-panel="data">Data & Preprocessing</button>
+                    <button class="wt-tab active" data-panel="data">Data & Preprocessing</button>
                     <button class="wt-tab" data-panel="model">Model (AlexNet)</button>
-                    <button class="wt-tab active" data-panel="lime">Explainability (LIME)</button>
+                    <button class="wt-tab" data-panel="lime">Explainability (LIME)</button>
                     <button class="wt-tab" data-panel="results">Results</button>
                 </div>
 
@@ -430,9 +430,9 @@
         // NOTE: numbers/details marked with [confirm] should be checked/edited by Aidan before publishing.
         const panels = {
             data: {
-                text: `<strong>Dataset.</strong> Trained and evaluated on a labeled set of 12,000+ microscope images of red blood cells [confirm exact count], split between healthy and sickled cells. Images were preprocessed — resized and normalized — before being fed into the model, and the classes were checked for balance so the model wasn't just learning to guess the majority class.`,
-                img: "image/lime-saliency-map.png",
-                caption: "Sample of the labeled red blood cell dataset used for training."
+                text: `<strong>Dataset.</strong> Trained and evaluated on a balanced set of 6,020 healthy and 6,017 sickle cell microscope images of red blood cells, pulled together from multiple research datasets. Because those source datasets used different staining techniques, preprocessing had to account for real color and lighting variation between images before they were fed into the model.`,
+                img: "image/dataPreProcess.jpg",
+                caption: "Original blood cell images (bottom row) and their color-normalized versions used during preprocessing."
             },
             model: {
                 text: `<strong>Architecture.</strong> We used AlexNet, a convolutional neural network, adapted for this binary healthy-vs-sickled classification task. As a group we split the work across data handling, model training, and evaluation — my own focus was on the interpretability side, covered in the next tab.`,
@@ -445,9 +445,9 @@
                 caption: "LIME saliency map — highlighted regions show which pixels most influenced the model's classification."
             },
             results: {
-                text: `<strong>Outcome.</strong> The model reached roughly 90% accuracy on the held-out test set [confirm exact number]. Just as important for a medical-adjacent task: the LIME explanations showed the model was consistently focusing on the cell body itself rather than spurious background regions, which gave us more confidence in the result beyond the accuracy number alone.`,
-                img: "image/lime-saliency-map.png",
-                caption: "LIME output used to validate that predictions were driven by the cell, not background artifacts."
+                text: `<strong>Outcome.</strong> Training accuracy climbed to roughly 95% by epoch 100, with test accuracy settling around 88% — a healthy gap that suggests the model generalized reasonably well rather than just memorizing the training set. Just as important for a medical-adjacent task: the LIME explanations showed the model was consistently focusing on the cell body itself rather than spurious background regions, which gave us more confidence in the result beyond the accuracy numbers alone.`,
+                img: "image/alexNet.jpg",
+                caption: "Training and testing accuracy over 100 epochs."
             }
         };
 
