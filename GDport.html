@@ -75,6 +75,15 @@
             margin-bottom: 1.5rem;
         }
 
+        .game-logo {
+            display: block;
+            max-width: min(500px, 90%);
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1rem;
+            border-radius: 6px;
+        }
+
         .game-section a {
             padding: 12px 24px;
             background: black;
@@ -276,10 +285,68 @@
         }
         .panel-link:hover { background: rgba(255,255,255,0.1); }
 
+        /* ---- Scroll position legend: shows how many games there are
+               and where you currently are in the list ---- */
+        .scroll-legend {
+            position: fixed;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 30;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .scroll-legend .scroll-caret {
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.55);
+            cursor: pointer;
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+        .scroll-legend .scroll-caret:hover { color: rgba(255,255,255,0.95); }
+        .scroll-legend .scroll-track {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 6px;
+            border-radius: 999px;
+            background: rgba(0,0,0,0.15);
+        }
+        .scroll-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            background: rgba(255,255,255,0.35);
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .scroll-dot:hover { background: rgba(255,255,255,0.7); }
+        .scroll-dot.active {
+            background: #ffffff;
+            transform: scale(1.5);
+            box-shadow: 0 0 6px rgba(255,255,255,0.7);
+        }
+        @media (max-width: 600px) {
+            .scroll-legend { right: 8px; }
+            .scroll-dot { width: 6px; height: 6px; }
+        }
+
     </style>
 </head>
 <body>
     <div class="panel-overlay" id="overlay" onclick="closePanel()"></div>
+    <div class="scroll-legend" id="scrollLegend">
+        <button class="scroll-caret" id="scrollUp" aria-label="Previous game">&#9650;</button>
+        <div class="scroll-track" id="scrollTrack"></div>
+        <button class="scroll-caret" id="scrollDown" aria-label="Next game">&#9660;</button>
+    </div>
     <nav>
         <button class="nav-button" onclick="window.location.href='index.html'">Home</button>
         <button class="nav-button" onclick="window.location.href='programmingPort.html'">Programming Portfolio</button>
@@ -428,8 +495,10 @@
                     Built during a 48-hour game jam.
                 </p>
 
-                <a href="https://evanmcrae.itch.io/rigged-referee">Itch</a>
-                <button class="learn-more-btn" onclick="openPanel('panel-RR')">Learn more</button>
+                <div class="actions">
+                    <a href="https://evanmcrae.itch.io/rigged-referee">Itch</a>
+                    <button class="learn-more-btn" onclick="openPanel('panel-RR')">Learn more</button>
+                </div>
             </div>
         </section>
 
@@ -455,10 +524,8 @@
                 <div class="panel-section">
                     <h3>Screenshots</h3>
                     <div class="screenshots">
-                        <img src="RR.png" alt="Screenshot 1">
-                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
-                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
-                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                        <img src="image/riggedReferee1.png" alt="Referee scoring a match between two boxers">
+                        <img src="image/riggedReferee2.png" alt="A rigged hit landing mid-match">
                     </div>
                 </div>
             </div>
@@ -466,17 +533,19 @@
 
         <section class="game-section" data-bg="#0B6623">
             <div class="content">
-                <h1>Satyr</h1>
+                <img src="image/satyr-wordmark.png" alt="Satyr" class="game-logo">
 
-                <div id="player-4" data-videoid="yOZVdqZYIyg" class="video"></div>
+                <div id="player-4" data-videoid="YOUR_VIDEO_ID_HERE" class="video"></div>
 
                 <p>
                     A 2D metroidvania made in Unity inspired heavily by Hollow Knight.
                     I worked as a programmer and designer with other UMBC game dev club members.
                 </p>
 
-                <a href="https://ladyakemi.itch.io/satyr">Itch</a>
-                <button class="learn-more-btn" onclick="openPanel('panel-satyr')">Learn more</button>
+                <div class="actions">
+                    <a href="https://ladyakemi.itch.io/satyr">Itch</a>
+                    <button class="learn-more-btn" onclick="openPanel('panel-satyr')">Learn more</button>
+                </div>
             </div>
         </section>
 
@@ -501,10 +570,10 @@
                 <div class="panel-section">
                     <h3>Screenshots</h3>
                     <div class="screenshots">
-                        <img src="S.png" alt="Screenshot 1">
-                        <img src="YOUR_SCREENSHOT_2" alt="Screenshot 2">
-                        <img src="YOUR_SCREENSHOT_3" alt="Screenshot 3">
-                        <img src="YOUR_SCREENSHOT_4" alt="Screenshot 4">
+                        <img src="image/satyrScreenshot2.png" alt="Platforming through the forest with the health and inventory HUD visible">
+                        <img src="image/satyrNPC.png" alt="The satyr protagonist exploring a moonlit cliffside">
+                        <img src="image/satyrCharacterArt.png" alt="Character art of the satyr protagonist in the forest">
+                        <img src="image/satyrScreenshot1.png" alt="The satyr protagonist meeting an NPC frog">
                     </div>
                 </div>
             </div>
@@ -517,17 +586,20 @@
                 <div id="player-5" data-videoid="YOUR_VIDEO_ID_HERE" class="video"></div>
 
                 <p>
-                    Educational in person role playing game, like DND.
+                    An in-person, tabletop-style educational game built for a UMBC astrobiology
+                    class — students play through it in place of a final exam.
                 </p>
 
-                <a href="https://ixlcourses.umbc.edu/umbc/course/course.aspx?C=74">UMBC page</a>
-                <button class="learn-more-btn" onclick="openPanel('panel-Mission to Europa')">Learn more</button>
+                <div class="actions">
+                    <a href="https://ixlcourses.umbc.edu/umbc/course/course.aspx?C=74">UMBC page</a>
+                    <button class="learn-more-btn" onclick="openPanel('panel-Mission to Europa')">Learn more</button>
+                </div>
             </div>
         </section>
 
         <div class="panel" id="panel-Mission to Europa">
             <button class="panel-close" onclick="closePanel()" aria-label="Close">&times;</button>
-            <h2>Danger! Ice Skater</h2>
+            <h2>Mission to Europa</h2>
             <p class="tagline">2021 · Unity 2D</p>
             <div class="panel-grid">
                 <div class="panel-section">
@@ -669,6 +741,39 @@
         // instead of snapping the instant a threshold is crossed.
         const sections = document.querySelectorAll('.game-section');
 
+        // Scroll legend — one dot per section, built dynamically so it always
+        // matches the real number of games without needing manual upkeep.
+        const scrollTrack = document.getElementById('scrollTrack');
+        const dots = Array.from(sections).map((section, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'scroll-dot';
+            dot.setAttribute('aria-label', `Go to game ${i + 1} of ${sections.length}`);
+            dot.addEventListener('click', () => {
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+            scrollTrack.appendChild(dot);
+            return dot;
+        });
+
+        function nearestSectionIndex() {
+            const vh = window.innerHeight;
+            const raw = window.scrollY / vh;
+            return Math.max(0, Math.min(sections.length - 1, Math.round(raw)));
+        }
+
+        function setActiveDot(index) {
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        }
+
+        document.getElementById('scrollUp').addEventListener('click', () => {
+            const target = Math.max(0, nearestSectionIndex() - 1);
+            sections[target].scrollIntoView({ behavior: 'smooth' });
+        });
+        document.getElementById('scrollDown').addEventListener('click', () => {
+            const target = Math.min(sections.length - 1, nearestSectionIndex() + 1);
+            sections[target].scrollIntoView({ behavior: 'smooth' });
+        });
+
         function hexToRgb(hex) {
             const clean = hex.replace('#', '');
             const bigint = parseInt(clean, 16);
@@ -698,6 +803,7 @@
         // changes rather than tracking them frame-for-frame.
         let displayed = { ...sectionColors[0] };
         const SMOOTHING = 0.12;
+        let lastActiveIndex = -1;
 
         function currentTargetColor() {
             const vh = window.innerHeight;
@@ -713,6 +819,13 @@
             displayed = lerpColor(displayed, target, SMOOTHING);
             document.body.style.backgroundColor =
                 `rgb(${Math.round(displayed.r)}, ${Math.round(displayed.g)}, ${Math.round(displayed.b)})`;
+
+            const activeIndex = nearestSectionIndex();
+            if (activeIndex !== lastActiveIndex) {
+                setActiveDot(activeIndex);
+                lastActiveIndex = activeIndex;
+            }
+
             requestAnimationFrame(tick);
         }
 
