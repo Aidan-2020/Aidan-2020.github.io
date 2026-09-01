@@ -436,8 +436,6 @@
             },
             model: {
                 text: `<strong>Architecture.</strong> We used AlexNet, a convolutional neural network, adapted for this binary healthy-vs-sickled classification task. As a group we split the work across data handling, model training, and evaluation — my own focus was on the interpretability side, covered in the next tab.`,
-                img: "image/lime-saliency-map.png",
-                caption: "AlexNet-based classifier used for healthy vs. sickled cell prediction."
             },
             lime: {
                 text: `<strong>My contribution.</strong> I applied LIME (Local Interpretable Model-Agnostic Explanations) to see which pixels the model actually relied on for each prediction — so we could sanity-check whether it was looking at the cell itself, rather than background noise or imaging artifacts. We also tried Grad-CAM as a second explainability method for comparison, but couldn't get it working cleanly in time; that's written up in the final report.`,
